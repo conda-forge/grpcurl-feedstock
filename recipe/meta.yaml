@@ -13,11 +13,11 @@ source:
 
 build:
   script:
-    - go build -trimpath -ldflags "-s -w -X main.version={{ version }}" -o $PREFIX/bin/ ./cmd/{{ name }}/  # [unix]
-    - go build -trimpath -ldflags "-s -w -X main.version={{ version }}" -o %LIBRARY_BIN%/ ./cmd/{{ name }}/  # [win]
+    - go build -trimpath -ldflags "-s -w -X main.version=v{{ version }}" -o $PREFIX/bin/ ./cmd/{{ name }}/  # [unix]
+    - go build -trimpath -ldflags "-s -w -X main.version=v{{ version }}" -o %LIBRARY_BIN%/ ./cmd/{{ name }}/  # [win]
     - go-licenses save . --save_path="./license-files/"
     - chmod -R u+w $(go env GOPATH) && rm -r $(go env GOPATH)  # [unix]
-  number: 0
+  number: 1
 
 requirements:
   build:
