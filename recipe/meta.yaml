@@ -1,5 +1,5 @@
-{% set goname = 'github.com/fullstorydev/grpcurl' %}
-{% set version = '1.9.1' %}
+{% set goname = "github.com/fullstorydev/grpcurl" %}
+{% set version = "1.9.2" %}
 
 {% set name = goname.split('/')[-1] %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-  sha256: 4bc60a920635929bdf9fa9bb5d310fe3f82bccd441a1487680566694400e4304
+  sha256: 9259935b6ef86d701caef60be338600798348368c0f4dca063a45cf88d8186a8
 
 build:
   script:
@@ -17,7 +17,7 @@ build:
     - go build -trimpath -ldflags "-s -w -X main.version=v{{ version }}" -o %LIBRARY_BIN%/ ./cmd/{{ name }}/  # [win]
     - go-licenses save . --save_path="./license-files/"
     - chmod -R u+w $(go env GOPATH) && rm -r $(go env GOPATH)  # [unix]
-  number: 1
+  number: 0
 
 requirements:
   build:
