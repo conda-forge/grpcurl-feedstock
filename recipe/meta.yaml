@@ -1,5 +1,5 @@
 {% set goname = "github.com/fullstorydev/grpcurl" %}
-{% set version = "1.9.2" %}
+{% set version = "1.9.3" %}
 
 {% set name = goname.split('/')[-1] %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-  sha256: 9259935b6ef86d701caef60be338600798348368c0f4dca063a45cf88d8186a8
+  sha256: bb555087f279af156159c86d4d3d5dd3f2991129e4cd6b09114e6851a679340d
 
 build:
   script:
